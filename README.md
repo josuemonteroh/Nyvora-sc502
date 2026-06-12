@@ -127,7 +127,7 @@ Manual registration of:
 
 | Team Member                   | Role                                                               |
 | ----------------------------- | ------------------------------------------------------------------ |
-| Josué David Montero Hernández | Frontend Development, System Architecture & Technical Coordination |
+| Josué David Montero Hernández | Frontend Development 
 | Kevin Jiménez Sánchez         | Frontend Development                                               |
 | Derek Stuard Vega Barquero    | Backend Development                                                |
 | Sebastián Gondrez Acuña       | Database Development                                               |
