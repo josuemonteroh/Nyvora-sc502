@@ -1,5 +1,6 @@
+
 <?php
-require 'config.php';
+require 'SQL_Conf/config.php';
  
 // Si ya hay sesión activa, redirigir directo al dashboard
 if (!empty($_SESSION['usuario_id'])) {
@@ -40,4 +41,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
 ?>
