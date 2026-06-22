@@ -1,0 +1,89 @@
+
+// MODELO RELACIONAL NYVORA MVP
+
+
+
+// Roles de los usuarios del sistema
+Table roles {
+  id int [pk, increment]
+  name varchar(30)
+}
+
+
+// Usuarios que pueden iniciar sesión
+Table users {
+  id int [pk, increment]
+  role_id int
+
+  name varchar(100)
+  email varchar(150)
+  password varchar(255)
+}
+
+
+// Pacientes registrados en la plataforma
+Table patients {
+  id int [pk, increment]
+  user_id int
+
+  full_name varchar(150)
+  identification varchar(50)
+  age int
+  phone varchar(30)
+  condition_general varchar(150)
+  observations text
+}
+
+
+// Métricas biométricas y hábitos del paciente
+Table measurements {
+  id int [pk, increment]
+  patient_id int
+
+  measurement_date datetime
+
+  weight_kg decimal(6,2)
+  bmi decimal(5,2)
+  body_fat_percentage decimal(5,2)
+
+  heart_rate int
+  sleep_hours decimal(4,2)
+  steps int
+}
+
+
+// Alertas preventivas
+Table alerts {
+  id int [pk, increment]
+  patient_id int
+
+  message text
+  alert_type varchar(100)
+  status varchar(30)
+  created_at datetime
+}
+
+
+// Notas y otras sobre el paciente
+Table patient_notes {
+  id int [pk, increment]
+  patient_id int
+
+  note text
+  created_at datetime
+}
+
+
+
+// RELACIONES
+
+
+Ref: users.role_id > roles.id
+
+Ref: patients.user_id > users.id
+
+Ref: measurements.patient_id > patients.id
+
+Ref: alerts.patient_id > patients.id
+
+Ref: patient_notes.patient_id > patients.id
