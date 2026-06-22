@@ -5,7 +5,10 @@ USE nyvora_db;
 -- Ejemplos: ADMIN, USER
 CREATE TABLE roles (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(30) NOT NULL
+    name VARCHAR(30) NOT NULL UNIQUE,
+    description VARCHAR(150),
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 
@@ -14,34 +17,52 @@ CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     role_id INT NOT NULL,
 
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(150) NOT NULL,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
 
-    FOREIGN KEY (role_id) REFERENCES roles(id)
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_users_roles
+        FOREIGN KEY (role_id)
+        REFERENCES roles(id)
 );
 
 
 -- Tabla de pacientes
 CREATE TABLE patients (
     id INT AUTO_INCREMENT PRIMARY KEY,
+
     user_id INT NOT NULL,
 
     full_name VARCHAR(150) NOT NULL,
-    identification VARCHAR(50),
+    identification VARCHAR(50) NOT NULL UNIQUE,
     age INT,
     phone VARCHAR(30),
 
     condition_general VARCHAR(150),
     observations TEXT,
 
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_patients_users
+        FOREIGN KEY (user_id)
+        REFERENCES users(id)
 );
 
 
 -- Tabla de métricas biométricas y hábitos
 CREATE TABLE measurements (
     id INT AUTO_INCREMENT PRIMARY KEY,
+
     patient_id INT NOT NULL,
 
     measurement_date DATETIME NOT NULL,
@@ -54,32 +75,45 @@ CREATE TABLE measurements (
     sleep_hours DECIMAL(4,2),
     steps INT,
 
-    FOREIGN KEY (patient_id) REFERENCES patients(id)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_measurements_patients
+        FOREIGN KEY (patient_id)
+        REFERENCES patients(id)
 );
 
 
 -- Tabla de alertas preventivas simples
 CREATE TABLE alerts (
     id INT AUTO_INCREMENT PRIMARY KEY,
+
     patient_id INT NOT NULL,
 
-    alert_type VARCHAR(100),
-    message TEXT,
-    status VARCHAR(30),
+    alert_type VARCHAR(100) NOT NULL,
+    message TEXT NOT NULL,
 
-    created_at DATETIME,
+    status VARCHAR(30) NOT NULL DEFAULT 'ACTIVE',
 
-    FOREIGN KEY (patient_id) REFERENCES patients(id)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    resolved_at DATETIME NULL,
+
+    CONSTRAINT fk_alerts_patients
+        FOREIGN KEY (patient_id)
+        REFERENCES patients(id)
 );
 
 
 -- Tabla de notas u observaciones adicionales
 CREATE TABLE patient_notes (
     id INT AUTO_INCREMENT PRIMARY KEY,
+
     patient_id INT NOT NULL,
 
-    note TEXT,
-    created_at DATETIME,
+    note TEXT NOT NULL,
 
-    FOREIGN KEY (patient_id) REFERENCES patients(id)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_notes_patients
+        FOREIGN KEY (patient_id)
+        REFERENCES patients(id)
 );
