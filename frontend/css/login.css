@@ -1,0 +1,165 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f7fa;
+    height:100vh;
+}
+
+.container{
+    display:flex;
+    height:100vh;
+}
+
+/* PANEL IZQUIERDO */
+
+.left-panel{
+    width:40%;
+    background:#0E7A6E;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    padding:40px;
+}
+
+.branding{
+    width:100%;
+}
+
+.branding img{
+    width:450px;
+    max-width:90%;
+    margin-bottom:30px;
+}
+
+.tagline{
+    font-size:20px;
+    line-height:1.8;
+    color:#FFFFFF;
+}
+
+/* PANEL DERECHO */
+
+.right-panel{
+    width:60%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-card{
+    width:550px;
+    padding:50px;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.10);
+}
+
+.login-card h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.login-card p{
+    color:#64748B;
+    margin-bottom:30px;
+}
+
+label{
+    display:block;
+    margin-bottom:10px;
+    margin-top:20px;
+    font-weight:500;
+}
+
+input{
+    width:100%;
+    padding:15px;
+
+    border:1px solid #dcdcdc;
+    border-radius:10px;
+
+    font-size:14px;
+}
+
+input:focus{
+    outline:none;
+    border-color:#0E7A6E;
+}
+
+button{
+    width:100%;
+    margin-top:30px;
+
+    border:none;
+
+    background:#0E7A6E;
+    color:white;
+
+    padding:16px;
+
+    border-radius:10px;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+.login-options{
+    margin-top:20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:14px;
+}
+
+.login-options a{
+    color:#0E7A6E;
+    text-decoration:none;
+}
+
+.remember{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:0;
+}
+
+.remember input{
+    width:auto;
+}
+
+.register-link{
+    margin-top:20px;
+
+    text-align:center;
+
+    font-size:14px;
+}
+
+.register-link a{
+    color:#0E7A6E;
+    text-decoration:none;
+    font-weight:600;
+}
