@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Espitaleta Wellness</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img src="../assets/logo.png" alt="Espitaleta Wellness">
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li class="active">
+                    <a href="dashboard.html">📊 Dashboard</a>
+                </li>
+
+                <li>
+                    <a href="pacientes.html">👥 Pacientes</a>
+                </li>
+
+                <li>
+                    <a href="#">📈 Métricas</a>
+                </li>
+
+                <li>
+                    <a href="#">📋 Historial</a>
+                </li>
+
+                <li>
+                    <a href="#">🚨 Alertas</a>
+                </li>
+
+                <li>
+                    <a href="#">⚙️ Configuración</a>
+                </li>
+
+                <li>
+                    <a href="../login.html">🚪 Cerrar Sesión</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <main class="content">
+
+        <div class="header">
+
+            <div>
+
+                <h1>Panel de Control</h1>
+
+                <p>
+                    Resumen general de pacientes e indicadores clínicos.
+                </p>
+
+            </div>
+
+            <div class="welcome">
+
+                <h3>👨‍⚕️ Dr. Espitaleta</h3>
+
+                <span>
+                    Viernes, 26 de junio de 2026
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- Barra superior -->
+
+        <div class="panel">
+
+            <div style="display:flex; gap:15px; align-items:center; flex-wrap:wrap;">
+
+                <input
+                    class="search-box"
+                    type="text"
+                    placeholder="🔍 Buscar paciente...">
+
+                <button class="btn-primary">
+
+                    ➕ Registrar Paciente
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <!-- KPI -->
+
+        <section class="kpi-cards">
+
+            <div class="card">
+
+                <div class="icon">👥</div>
+
+                <h2>128</h2>
+
+                <p>Pacientes Registrados</p>
+
+                <small>Total del sistema</small>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">📊</div>
+
+                <h2>532</h2>
+
+                <p>Métricas Registradas</p>
+
+                <small>Actualizado hoy</small>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">🚨</div>
+
+                <h2>12</h2>
+
+                <p>Alertas Clínicas</p>
+
+                <small>Requieren revisión</small>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">📈</div>
+
+                <h2>94%</h2>
+
+                <p>Seguimiento Completo</p>
+
+                <small>Meta mensual</small>
+
+            </div>
+
+        </section>
+
+        <section class="dashboard-grid">
+
+            <div class="panel">
+
+                <h2>Últimos Pacientes</h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Paciente</th>
+
+                            <th>Edad</th>
+
+                            <th>Último Control</th>
+
+                            <th>Estado</th>
+
+                            <th>Expediente</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>👤 María Gómez</td>
+
+                            <td>34</td>
+
+                            <td>Hoy</td>
+
+                            <td>
+
+                                <span class="badge success">
+
+                                    🟢 Activo
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a href="#" class="action-link">
+
+                                    👁 Abrir
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>👤 Carlos Vargas</td>
+
+                            <td>42</td>
+
+                            <td>Ayer</td>
+
+                            <td>
+
+                                <span class="badge warning">
+
+                                    🟡 Seguimiento
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a href="#" class="action-link">
+
+                                    👁 Abrir
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>👤 Ana Rodríguez</td>
+
+                            <td>29</td>
+
+                            <td>20 Jun</td>
+
+                            <td>
+
+                                <span class="badge success">
+
+                                    🟢 Activo
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a href="#" class="action-link">
+
+                                    👁 Abrir
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                                                <tr>
+
+                            <td>👤 Diego Soto</td>
+
+                            <td>37</td>
+
+                            <td>18 Jun</td>
+
+                            <td>
+
+                                <span class="badge danger">
+
+                                    🔴 Inactivo
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a href="#" class="action-link">
+
+                                    👁 Abrir
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>👤 Laura Méndez</td>
+
+                            <td>31</td>
+
+                            <td>15 Jun</td>
+
+                            <td>
+
+                                <span class="badge success">
+
+                                    🟢 Activo
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a href="#" class="action-link">
+
+                                    👁 Abrir
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="panel">
+
+                <h2>Alertas Recientes</h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Paciente</th>
+
+                            <th>Alerta</th>
+
+                            <th>Prioridad</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Carlos Vargas</td>
+
+                            <td>Peso fuera de rango</td>
+
+                            <td>
+
+                                <span class="badge danger">
+
+                                    🔴 Alta
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>María Gómez</td>
+
+                            <td>Control pendiente</td>
+
+                            <td>
+
+                                <span class="badge warning">
+
+                                    🟡 Media
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Ana Rodríguez</td>
+
+                            <td>Actualización completada</td>
+
+                            <td>
+
+                                <span class="badge success">
+
+                                    🟢 Baja
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <br>
+
+        <div class="panel">
+
+            <h2>Próximos Controles</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Hora</th>
+
+                        <th>Paciente</th>
+
+                        <th>Consulta</th>
+
+                        <th>Profesional</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>09:00</td>
+
+                        <td>María Gómez</td>
+
+                        <td>Control Nutricional</td>
+
+                        <td>Dr. Espitaleta</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>10:30</td>
+
+                        <td>Carlos Vargas</td>
+
+                        <td>Seguimiento IMC</td>
+
+                        <td>Dr. Espitaleta</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>11:45</td>
+
+                        <td>Ana Rodríguez</td>
+
+                        <td>Valoración General</td>
+
+                        <td>Dr. Espitaleta</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>14:00</td>
+
+                        <td>Laura Méndez</td>
+
+                        <td>Control de Peso</td>
+
+                        <td>Dr. Espitaleta</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>
